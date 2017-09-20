@@ -73,7 +73,7 @@ class SetupFlask(object):
             return server.serve_forever
 
     def _test_database(self):
-        User = self.endpoints.user.models.User
+        User = self.endpoints.User
         if self.configuration.debug:
             log.trace("Inspected Database for tables")
             engine = create_engine(self.configuration.SQLALCHEMY_DATABASE_URI)
@@ -117,7 +117,6 @@ class SetupFlask(object):
         :return:          None
         """
         self.endpoints = endpoints
-        admin_update = self.endpoints.user.views.admin_update
         log.trace("Registering Blueprint Endpoints")
         for name in dir(self.endpoints):
             blue_print = getattr(self.endpoints, name)
