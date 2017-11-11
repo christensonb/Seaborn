@@ -98,6 +98,7 @@ class BaseConfig(object):
             return self.remote_database_connection()
         if source == 'local':
             return self.local_database_connection()
+        raise Exception("Unknown database connection source: %s"%source)
 
     def sqllite_database_connection(self):
         return 'sqlite:///%s.db' % (os.path.join(self.data_folder, self.name))
