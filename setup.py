@@ -1,4 +1,7 @@
 from setuptools import setup, find_packages
+import os
+
+os.system('pip install -U pip')
 
 plugins = []
 setup(

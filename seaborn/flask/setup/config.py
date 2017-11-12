@@ -14,7 +14,7 @@ from seaborn.logger import SeabornFormatter, TraceFormatter, log
 from seaborn.python_2_to_3 import *
 from seaborn.file import find_file
 from seaborn.local_data import LocalData
-
+from seaborn.timestamp import set_timezone_aware
 
 class BaseConfig(object):
     """ Base config for Flask """
@@ -92,6 +92,7 @@ class BaseConfig(object):
         self.SECRET_KEY = self.SECRET_KEY or secret_key
 
     def get_database_connection(self, source):
+        set_timezone_aware(source == 'sqlite')
         if source == 'sqlite':
             return self.sqllite_database_connection()
         if source == 'remote':
