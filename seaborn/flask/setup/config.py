@@ -66,6 +66,7 @@ class BaseConfig(object):
         self.SQLALCHEMY_DATABASE_URI = self.get_database_connection(database_source or self.database_source)
         for k, v in kwargs.items():
             setattr(self, k, v)
+        self.timezone_aware = self.database_source != 'sqlite'
 
     def setup_logging(self):
         SeabornFormatter(relative_pathname='/%s_flask/' % self.name, str_format=self.log_str_format,
@@ -92,7 +93,6 @@ class BaseConfig(object):
         self.SECRET_KEY = self.SECRET_KEY or secret_key
 
     def get_database_connection(self, source):
-        set_timezone_aware(source == 'sqlite')
         if source == 'sqlite':
             return self.sqllite_database_connection()
         if source == 'remote':
