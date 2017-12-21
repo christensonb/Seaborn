@@ -6,14 +6,13 @@
         pycharm will also break this, although it sometimes can recover
 """
 
-__author__ = 'Ben Christenson'
-__date__ = "10/02/15"
 import inspect
 import os
 import sys
 from collections import OrderedDict
 import traceback
 from seaborn.python_2_to_3 import *
+
 
 def function_arguments(func):
     """
@@ -24,6 +23,7 @@ def function_arguments(func):
         return list(inspect.getargspec(func).args)
     else:
         return list(inspect.signature(func).parameters.keys())
+
 
 def function_defaults(func):
     """
@@ -291,13 +291,6 @@ def smoke_test():
                            ('embed_class_info', test_func_embed(TestClass, c="c", d=2).args),
                            ('static_args', TestClass.static_test("a")),
                            ('embed_static_args', test_func_embed(TestClass.static_test, a="a", index=2))])
-
-    # assert_answer.save_test_as_file = True
-    #
-    # for constant in results:
-    #     if 'file' in results[constant]:
-    #         results[constant]['file'] = results[constant]['file'].split('pyeen')[-1]
-    #     assert_answer(results[constant], constant_name = constant,exclude_keys=['line_number','globals','self'])
 
 
 if __name__ == '__main__':
