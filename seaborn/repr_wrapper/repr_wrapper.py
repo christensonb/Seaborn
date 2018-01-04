@@ -1,6 +1,6 @@
 """" This contains decorators for making returns nicer to work with in and IDLE or Ipython """
 import pprint
-from seaborn.python_2_to_3 import *
+from seaborn import *
 
 PPRINT_INDENT = 2
 PPRINT_WIDTH = 80

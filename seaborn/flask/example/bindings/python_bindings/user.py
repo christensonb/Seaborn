@@ -1,4 +1,4 @@
-from seaborn.rest.intellisense import *
+from seaborn.rest_client.intellisense import *
 
 
 class User_Login_Email(Endpoint):

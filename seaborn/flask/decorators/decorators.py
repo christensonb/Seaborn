@@ -19,7 +19,7 @@ from seaborn.python_2_to_3 import *
 from seaborn.parse_doc import parse_arg_types
 from seaborn.timestamp import str_to_datetime
 from seaborn.calling_function import function_defaults, function_path, function_arguments
-from seaborn.rest.errors import RestException, BadRequestException, NotFoundException, GOOD_REQUEST
+from seaborn.rest_client.errors import RestException, BadRequestException, NotFoundException, GOOD_REQUEST
 from seaborn.flask.models import ApiModel
 from seaborn.flask.memcache import MemCache
 

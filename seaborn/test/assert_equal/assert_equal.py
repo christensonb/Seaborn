@@ -5,7 +5,7 @@ import time
 import os
 import filecmp
 import logging as log
-from seaborn.python_2_to_3 import *
+from seaborn import *
 from pprint import pprint
 
 import json

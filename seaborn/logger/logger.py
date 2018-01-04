@@ -1,12 +1,13 @@
 from __future__ import absolute_import
-import logging
-import sys
-import os
-import io
-import traceback
-from logging import currentframe, DEBUG
 
-from seaborn.file import mkdir_for_file
+import io
+import logging
+import os
+import sys
+import traceback
+from logging import DEBUG
+
+from seaborn import mkdir_for_file
 
 
 class SeabornLogger(logging.Logger):
@@ -267,7 +268,7 @@ def setup_file_logging(log_filename, log_file_level="DEBUG", str_format=None, da
     :param silence_modules  list of str of modules to silence
     :return:                None
     """
-    from seaborn.timestamp import datetime_to_str
+    from seaborn import datetime_to_str
     if os.path.exists(log_filename) and log_restart:
         os.remove(log_filename)
 

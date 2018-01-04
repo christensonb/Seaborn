@@ -2,7 +2,7 @@
     This module sets up a series of echo endpoints to test if the server is up and responding.
 """
 from settings.global_import import *
-from seaborn.timestamp import datetime_to_str
+from seaborn import datetime_to_str
 
 log.trace("Importing endpoint echo.views")
 from .models import Echo

@@ -4,7 +4,7 @@
     if the data is not there it will prompt the user for the data through standard io.
 
     Example:
-    >>> from seaborn.local_data import LocalData
+    >>> from seaborn import LocalData
     >>> local_data = LocalData()
     >>> username = local_data['username']
     Please provide the 'username' for the local data:
@@ -14,9 +14,10 @@
 """
 __author__ = 'Ben Christenson'
 __date__ = "10/7/15"
-import os
 import json
-from seaborn.calling_function import function_info
+import os
+
+from seaborn import function_info
 
 
 class LocalData(object):

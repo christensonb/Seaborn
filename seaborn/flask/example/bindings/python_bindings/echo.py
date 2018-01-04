@@ -1,4 +1,4 @@
-from seaborn.rest.intellisense import *
+from seaborn.rest_client.intellisense import *
 
 
 class Echo_Array_String2(Endpoint):

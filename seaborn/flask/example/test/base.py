@@ -14,8 +14,7 @@ sys.path.append(flask_folder)
 from settings.config import configuration
 from bindings.python_bindings import Connection
 
-from seaborn.file import find_file
-from seaborn.test.standard_import import *
+from seaborn import find_file
 from test_chain import TestChain
 
 PROXY_DEBUG_SERVER = 'http://127.0.0.1:4777'

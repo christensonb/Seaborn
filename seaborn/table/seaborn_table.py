@@ -15,9 +15,9 @@
 import os
 from collections import OrderedDict
 from test_chain import TestChain, unittest
-from seaborn.file import file as file_handling
-from seaborn.sorters import by_key
-from seaborn.python_2_to_3 import *
+from seaborn import file as file_handling
+from seaborn import by_key
+from seaborn import *
 
 try:
     import behave

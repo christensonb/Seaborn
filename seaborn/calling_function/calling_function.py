@@ -11,7 +11,7 @@ import os
 import sys
 from collections import OrderedDict
 import traceback
-from seaborn.python_2_to_3 import *
+from seaborn import *
 
 
 def function_arguments(func):

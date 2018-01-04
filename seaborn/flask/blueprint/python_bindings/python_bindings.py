@@ -4,9 +4,10 @@
 __author__ = 'Ben Christenson'
 __date__ = "10/19/15"
 import os
-from seaborn.file import clear_path, mkdir
-from seaborn.meta import class_name_to_instant_name, url_name_to_class_name, create_init_files
-from seaborn.sorters import by_attribute, by_longest_then_by_abc, by_key, by_shortest_then_by_abc
+
+from seaborn import by_attribute, by_longest_then_by_abc
+from seaborn import clear_path, mkdir
+from seaborn import url_name_to_class_name
 
 
 def create_python_blueprint_bindings(path, blue_prints, models, file_start='endpoints/', file_end='/views.py',
@@ -68,7 +69,7 @@ def create_endpoint(path, module, member_endpoints):
     for child in member_endpoints.get(module.replace('_', '/'), []):
         if os.path.exists('%s/%s.py' % (path, child.replace('/', '_'))):
             fn.write('from .%s import *\n' % child.replace('/', '_'))
-    fn.write('from seaborn.rest.intellisense import *\n')
+    fn.write('from seaborn.rest_client.intellisense import *\n')
     return fn
 
 
@@ -118,7 +119,7 @@ def create_connection(path, modules, member_endpoints):
     :return:                 None
     """
     fn = open('%s/connection.py' % path, 'w')
-    fn.write('from seaborn.rest.intellisense import *\n')
+    fn.write('from seaborn.rest_client.intellisense import *\n')
     last = '__init__'
     for v in sorted(modules):
         if os.path.exists('%s/%s.py' % (path, v)) and not v.startswith(last):

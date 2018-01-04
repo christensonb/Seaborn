@@ -1,5 +1,5 @@
 from flask_login import current_user
-from seaborn.logger import log
+from seaborn import log
 
 
 def report(path, link, severity, message, user=None):

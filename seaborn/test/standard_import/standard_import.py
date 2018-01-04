@@ -15,14 +15,14 @@ from functools import wraps
 from random import random, seed
 import inspect
 from seaborn.python_2_to_3 import *
-from seaborn.rest.errors import *
-from seaborn.rest.connection import ConnectionBasic
+from seaborn.rest_client.errors import *
+from seaborn.rest_client.connection import ConnectionBasic
 from seaborn.logger import log, setup_stdout_logging
 from seaborn.calling_function import function_info
 from seaborn.parse_doc import parse_doc_str
 from seaborn.rest import api_call
 from seaborn.rest import endpoint
-from seaborn.rest.api_call import ApiError
+from seaborn.rest_client.api_call import ApiError
 from seaborn.local_data import LocalData
 from seaborn.flask import decorators
 
